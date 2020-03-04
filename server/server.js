@@ -31,9 +31,11 @@ app.listen(3003, () =>{
 });
 
 function executePythonCode(code, callback) {
+    console.log("Executing python code");
+    console.log(code);
     codeResult = [];
     exec(code).stdout.on('data', (data) =>{
-        console.log("data");
+        console.log(data);
 
         if(data !== undefined){
             codeResult.push(data);
