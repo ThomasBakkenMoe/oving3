@@ -15,19 +15,21 @@ app.get('/', (request, response) =>{
 
         case "python":
             console.log("Selected language: Python");
+            executePythonCode(() => {
+                response.send(codeResult);
+            });
             break;
 
         default:
             console.log("Error selecting language");
     }
     console.log("Got a get request!");
-    response.send(codeResult);
 });
 
 app.listen(3003, () =>{
     console.log("API Running!")
 });
 
-function executePythonCode() {
-
+function executePythonCode(callback) {
+    callback();
 }
