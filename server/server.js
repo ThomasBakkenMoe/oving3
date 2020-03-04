@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-var codeResult = "Response!";
+var codeResult = "Response!"; // Should probably change this guy to something that is not TEMP
 
 app.get('/', (request, response) =>{
 
@@ -18,3 +18,7 @@ app.get('/', (request, response) =>{
 app.listen(3003, () =>{
     console.log("API Running!")
 });
+
+function executePythonCode() {
+
+}
