@@ -11,6 +11,15 @@ var codeResult = "Response!"; // Should probably change this guy to something th
 
 app.get('/', (request, response) =>{
 
+    switch (request.body.lang) {
+
+        case "python":
+            console.log("Selected language: Python");
+            break;
+
+        default:
+            console.log("Error selecting language");
+    }
     console.log("Got a get request!");
     response.send(codeResult);
 });
