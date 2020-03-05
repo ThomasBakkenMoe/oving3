@@ -15,9 +15,7 @@ app.get('/', (request, response) =>{
 
         case "python":
             console.log("Selected language: Python");
-            executePythonCode("print('Hello World')", function(){
-
-            });
+            executePythonCode("print('Hello World')");
             response.send(codeResult);
             break;
 
@@ -31,7 +29,7 @@ app.listen(3003, () =>{
     console.log("API Running!")
 });
 
-function executePythonCode(code, callback) {
+function executePythonCode(code) {
     console.log("Executing python code");
     console.log(code);
     codeResult = [];
