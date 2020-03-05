@@ -11,7 +11,7 @@ let codeResult = []; // Should probably change this guy to something that is not
 
 app.get('/', (request, response) =>{
 
-    let code = JSON.parse(request.body.code).join("\n");
+    let code = request.body.code;
 
     switch (request.body.lang) {
 
