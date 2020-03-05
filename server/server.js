@@ -16,8 +16,9 @@ app.get('/', (request, response) =>{
         case "python":
             console.log("Selected language: Python");
             executePythonCode("print('Hello World')", function(){
-                response.send(codeResult);
+
             });
+            response.send(codeResult);
             break;
 
         default:
