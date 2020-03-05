@@ -34,7 +34,11 @@ function executePythonCode(code, callback) {
     console.log("Executing python code");
     console.log(code);
     codeResult = [];
-    exec(code).stdout.on('data', (data) =>{
+
+    //TODO: write to file instead of attempting to execute directly
+
+    fs.writeFile('pythonCode.py', code);
+    exec('python pythonCode.py').stdout.on('data', (data) =>{
         console.log(data);
 
         if(data !== undefined){
