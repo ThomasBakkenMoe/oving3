@@ -43,8 +43,6 @@ function executePythonCode(code) {
         if(data !== undefined){
             codeResult.push(data);
         }
-
-        callback();
     });
 
 }
