@@ -11,7 +11,7 @@ let codeResult = []; // Should probably change this guy to something that is not
 
 app.get('/', (request, response) =>{
 
-    let code = request.body.code;
+    let code = JSON.parse(request.body.code).join("\n");
 
     switch (request.body.lang) {
 
@@ -41,7 +41,7 @@ function executePythonCode(code, callback) {
 
     //TODO: write to file instead of attempting to execute directly
 
-    fs.writeFile('pythonCode.py', code.join("\n"), function(err, data){
+    fs.writeFile('pythonCode.py', code, function(err, data){
         if(err) console.log('error', err);
     });
     exec('python pythonCode.py').stdout.on('data', (data) =>{
