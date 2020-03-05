@@ -45,7 +45,7 @@ function executePythonCode(code, callback) {
             codeResult.push(data);
         }
 
-        callback(data);
+        callback();
     });
 
 }
