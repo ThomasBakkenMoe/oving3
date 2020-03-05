@@ -5,7 +5,7 @@ import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {dracula} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import {python} from "react-syntax-highlighter/dist/cjs/languages/prism";
 
-function app() {
+function App() {
 
     let ip = "http://10.239.159.185:3003/";
 
@@ -37,4 +37,4 @@ function app() {
     );
 }
 
-export default app;
+export default App;
