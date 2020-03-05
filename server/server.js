@@ -41,7 +41,7 @@ function executePythonCode(code, callback) {
 
     //TODO: write to file instead of attempting to execute directly
 
-    fs.writeFile('pythonCode.py', code, function(err, data){
+    fs.writeFile('pythonCode.py', code.join("\n"), function(err, data){
         if(err) console.log('error', err);
     });
     exec('python pythonCode.py').stdout.on('data', (data) =>{
