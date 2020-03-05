@@ -7,21 +7,25 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-var codeResult = []; // Should probably change this guy to something that is not TEMP
+let codeResult = []; // Should probably change this guy to something that is not TEMP
 
 app.get('/', (request, response) =>{
+
+    let code = request.body.code;
 
     switch (request.body.lang) {
 
         case "python":
             console.log("Selected language: Python");
-            executePythonCode("print('Hello World')", () => {
-                response.send(codeResult);
+            executePythonCode(code, () => {
+                response.setHeader('Content-Type', 'application/json');
+                response.send(JSON.stringify({codeResult: codeResult}));
             });
             break;
 
         default:
             console.log("Error selecting language");
+            break;
     }
     console.log("Got a get request!");
 });
@@ -49,5 +53,4 @@ function executePythonCode(code, callback) {
 
         callback();
     });
-
 }
