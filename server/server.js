@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded());
 
 let codeResult = []; // Should probably change this guy to something that is not TEMP
 
-app.get('/', (request, response) =>{
+app.post('/', (request, response) =>{
 
     let code = request.body.code;
 
