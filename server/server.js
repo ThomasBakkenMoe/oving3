@@ -15,8 +15,9 @@ app.get('/', (request, response) =>{
 
         case "python":
             console.log("Selected language: Python");
-            executePythonCode("print('Hello World')");
-            response.send(codeResult);
+            executePythonCode("print('Hello World')", () => {
+                response.send(codeResult);
+            });
             break;
 
         default:
@@ -29,7 +30,7 @@ app.listen(3003, () =>{
     console.log("API Running!")
 });
 
-function executePythonCode(code) {
+function executePythonCode(code, callback) {
     console.log("Executing python code");
     console.log(code);
     codeResult = [];
@@ -45,6 +46,8 @@ function executePythonCode(code) {
         if(data !== undefined){
             codeResult.push(data);
         }
+
+        callback();
     });
 
 }
