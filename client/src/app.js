@@ -13,6 +13,7 @@ function App() {
     const [result, setResult] = useState('');
 
     function runCode(lang) {
+        console.log("attempting to run code!");
         axios.post(ip, {lang: lang, code: code}).then((response) => {
                 console.log(response);
                 setCode(response.data.codeResult[0]);
