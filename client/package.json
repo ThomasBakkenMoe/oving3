@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +15,8 @@
     "react": "^16.13.0",
     "react-ace": "^8.0.0",
     "react-bootstrap": "^1.0.0-beta.17",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0",
     "react-syntax-highlighter": "^12.2.1"
   }
 }
