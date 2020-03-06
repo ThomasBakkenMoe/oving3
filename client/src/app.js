@@ -16,7 +16,7 @@ function App() {
         console.log("attempting to run code!");
         axios.post(ip, {lang: lang, code: code}).then((response) => {
                 console.log(response);
-                setCode(response.data.codeResult[0]);
+                setResult(response.data.codeResult[0]);
         });
     }
 
